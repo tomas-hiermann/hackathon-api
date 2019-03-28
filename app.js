@@ -15,6 +15,9 @@ io.on("connection", socket => {
   );
   socket.on("disconnect", () => console.log("Client disconnected"));
 });
+io.on('message', function(message) {
+    console.log(message);
+});
 const getApiAndEmit = async socket => {
   try {
    
