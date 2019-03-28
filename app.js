@@ -13,11 +13,10 @@ io.on("connection", socket => {
     () => getApiAndEmit(socket),
     10000
   );
+  socket.on('message', (message) => console.log(message));
   socket.on("disconnect", () => console.log("Client disconnected"));
 });
-io.on('message', function(message) {
-    console.log(message);
-});
+
 const getApiAndEmit = async socket => {
   try {
    
